@@ -2,10 +2,10 @@
 shopt -s extglob #turn on extended globbing
 echo "Welcome UserRegistration"
 echo "Enter First Name"
-read firstName
-read lastName
-read email
-read mobile
+#read firstName
+#read lastName
+#read email
+#read mobile
 read password
 
 function checkFirstName(){
@@ -50,8 +50,8 @@ function checkMobile(){
 }
 
 
-function checkPassword(){
-	passwordPattern="^[a-zA-Z]{8,}"
+function checkPassword1(){
+	passwordPattern="^[a-zA-Z0-9]{8,}$"
 	if [[ $password =~ $passwordPattern ]]
 	then
 		echo "valid password"
@@ -60,8 +60,22 @@ function checkPassword(){
 	fi
 }
 
-checkFirstName
-checkLastName
-checkEmail
-checkMobile
-checkPassword
+function checkPassword2(){
+#	pp="^[a-z+[[:upper:]]{1,}]{8,}$"
+#	pp="^[a-z]{7}[A-Z]{1}"	
+#	pp="^[a-zA-Z0-9]{8,}[A-Z]+[a-z0-9]$"
+	pp="^[a-z0-9]*[A-Z]+[a-zA-Z0-9]*[a-zA-Z0-9]*$"
+	if [[ $password =~ $pp ]]
+	then
+		echo "valid password2"
+	else
+		echo "invalid password2"
+	fi
+}
+
+#checkFirstName
+#checkLastName
+#checkEmail
+#checkMobile
+checkPassword2
+
