@@ -74,13 +74,13 @@ function checkPassword2(){
 }
 
 function checkPassword3(){
-	passwordPattern="[a-zA-Z0-9]*[A-Z]+[a-zA-Z0-9]*[0-9]$"
-	if [[ $password =~ $passwordPattern ]]
-	then
-		echo "valid password"
-	else
-		echo "invalid password"
-	fi
+	passwordPattern=".*[A-Z]{1}.*[0-9]{1}.*$"
+   if [[ $password =~ $passwordPattern ]]
+   then
+      echo "valid password"
+   else
+      echo "invalid password"
+   fi
 }
 
 #checkFirstName
