@@ -83,9 +83,22 @@ function checkPassword3(){
    fi
 }
 
+function checkPassword4(){
+	passwordPattern4=".*[A-Z]{1}.*[0-9]{1}.*[$&+,:;=?@#|'<>.-^*()%!].*$"
+	if [[ $password =~ $passwordPattern4 ]]
+	then
+		echo "valid password"
+	else
+		echo "invalid password"
+	fi
+}
+
+
 #checkFirstName
 #checkLastName
 #checkEmail
 #checkMobile
 #checkPassword2
-checkPassword3
+#checkPassword3
+checkPassword4
+
