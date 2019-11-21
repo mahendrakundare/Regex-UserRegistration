@@ -3,6 +3,7 @@ shopt -s extglob #turn on extended globbing
 echo "Welcome UserRegistration"
 echo "Enter First Name"
 read firstName
+read lastName
 
 function checkFirstName(){
 	firstNamePattern="^[A-Z][a-zA-Z]{2,}"
@@ -14,4 +15,10 @@ function checkFirstName(){
 	fi
 }
 
-checkFirstName
+function checkLastName(){
+	lastNamePattern="^[A-Z][a-zA-Z]{2,}"
+	if [[ $lastName =~ $lastNamePattern ]]
+}
+
+#checkFirstName
+checkLastName
