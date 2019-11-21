@@ -18,7 +18,14 @@ function checkFirstName(){
 function checkLastName(){
 	lastNamePattern="^[A-Z][a-zA-Z]{2,}"
 	if [[ $lastName =~ $lastNamePattern ]]
+	then
+		echo "valid last Name"
+	else
+		echo "invalid last Name"
+	fi
 }
+
 
 #checkFirstName
 checkLastName
+
