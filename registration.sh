@@ -64,7 +64,7 @@ function checkPassword2(){
 #	pp="^[a-z+[[:upper:]]{1,}]{8,}$"
 #	pp="^[a-z]{7}[A-Z]{1}"	
 #	pp="^[a-zA-Z0-9]{8,}[A-Z]+[a-z0-9]$"
-	pp="^[a-z0-9]*[A-Z]+[a-zA-Z0-9]*[a-zA-Z0-9]*$"
+	pp="[a-z0-9]*[A-Z]+[a-zA-Z0-9]*$"
 	if [[ $password =~ $pp ]]
 	then
 		echo "valid password2"
@@ -73,8 +73,19 @@ function checkPassword2(){
 	fi
 }
 
+function checkPassword3(){
+	passwordPattern="[a-zA-Z0-9]*[A-Z]+[a-zA-Z0-9]*[0-9]$"
+	if [[ $password =~ $passwordPattern ]]
+	then
+		echo "valid password"
+	else
+		echo "invalid password"
+	fi
+}
+
 #checkFirstName
 #checkLastName
 #checkEmail
 #checkMobile
-checkPassword2
+#checkPassword2
+checkPassword3
