@@ -6,6 +6,7 @@ read firstName
 read lastName
 read email
 read mobile
+read password
 
 function checkFirstName(){
 	firstNamePattern="^[A-Z][a-zA-Z]{2,}$"
@@ -48,7 +49,19 @@ function checkMobile(){
 	fi
 }
 
+
+function checkPassword(){
+	passwordPattern="^[a-zA-Z]{8,}"
+	if [[ $password =~ $passwordPattern ]]
+	then
+		echo "valid password"
+	else
+		echo "invalid password"
+	fi
+}
+
 checkFirstName
 checkLastName
 checkEmail
 checkMobile
+checkPassword
