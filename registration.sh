@@ -64,7 +64,7 @@ function checkPassword2(){
 #	pp="^[a-z+[[:upper:]]{1,}]{8,}$"
 #	pp="^[a-z]{7}[A-Z]{1}"	
 #	pp="^[a-zA-Z0-9]{8,}[A-Z]+[a-z0-9]$"
-	pp="^[a-z0-9]*[A-Z]+[a-zA-Z0-9]*[a-zA-Z0-9]*$"
+	pp="^[a-z0-9]*[A-Z]+[a-zA-Z0-9]*$"
 	if [[ $password =~ $pp ]]
 	then
 		echo "valid password2"
@@ -72,6 +72,7 @@ function checkPassword2(){
 		echo "invalid password2"
 	fi
 }
+
 
 #checkFirstName
 #checkLastName
