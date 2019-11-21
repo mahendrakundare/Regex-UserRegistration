@@ -5,9 +5,10 @@ echo "Enter First Name"
 read firstName
 read lastName
 read email
+read mobile
 
 function checkFirstName(){
-	firstNamePattern="^[A-Z][a-zA-Z]{2,}"
+	firstNamePattern="^[A-Z][a-zA-Z]{2,}$"
 	if [[ $firstName =~ $firstNamePattern ]]
 	then
 		echo "valid first Name"
@@ -17,7 +18,7 @@ function checkFirstName(){
 }
 
 function checkLastName(){
-	lastNamePattern="^[A-Z][a-zA-Z]{2,}"
+	lastNamePattern="^[A-Z][a-zA-Z]{2,}$"
 	if [[ $lastName =~ $lastNamePattern ]]
 	then
 		echo "valid last Name"
@@ -37,7 +38,17 @@ function checkEmail(){
 	fi
 }
 
+function checkMobile(){
+	mobilePattern="^[0-9]{2,2}[[:space:]][0-9]{10}$"
+	if [[ $mobile =~ $mobilePattern ]]
+	then
+		echo "valid mobile"
+	else
+		echo "invalid mobile"
+	fi
+}
 
-#checkFirstName
-#checkLastName
+checkFirstName
+checkLastName
 checkEmail
+checkMobile
